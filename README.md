@@ -13,6 +13,7 @@ Angular testing workshop
 
 ##More help
 [angular-seed]: https://github.com/angular/angular-seed
+[unit-testing]: https://docs.angularjs.org/guide/unit-testing
 [git]: http://git-scm.com/
 [bower]: http://bower.io
 [npm]: https://www.npmjs.org/
