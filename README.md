@@ -1,21 +1,15 @@
 # angular-test
 Angular testing workshop
 
-###Install Yeoman
+###Setup Environment
 
-`npm install -g grunt-cli bower yo karma`
+`git clone --depth=1 https://github.com/angular/angular-seed.git ngHangman`
 
-###Install generators
-
-`npm install generator-karma generator-angular`
-
-###Create Project
-`yo angular`
-
+`npm install`
 
 
 
 
 
 ##More help
-* http://yeoman.io/codelab.html
+https://github.com/angular/angular-seed
