@@ -3,11 +3,19 @@ Angular testing workshop
 
 ###Install Yeoman
 
-`npm install -g grunt-cli bower yo `
+`npm install -g grunt-cli bower yo karma`
 
 ###Install generators
 
-`generator-karma generator-angular`
+`npm install generator-karma generator-angular`
 
 ###Create Project
 `yo angular`
+
+
+
+
+
+
+##More help
+* http://yeoman.io/codelab.html
