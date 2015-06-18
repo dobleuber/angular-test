@@ -1,0 +1,37 @@
+<div class="hangman">
+    <h1>The Hangman!!</h1>
+    <div class="secret-word">
+
+    </div>
+    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+        <g>
+            <title>Layer 1</title>
+            <rect id="svg_1" height="57" width="420" y="400" x="122" stroke-width="5" stroke="#000000" fill="#FF0000"/>
+            <rect stroke="#000000" id="svg_3" height="353.33334" width="40" y="44" x="461.33333" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#FF0000"/>
+            <rect stroke="#000000" id="svg_5" height="24" width="234.66668" y="44" x="225.33332" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#FF0000"/>
+            <line ng-show="attempts > 4" stroke="#000000" id="svg_6" y2="327.99999" x2="313.33334" y1="205.33334" x1="313.33334" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="10" fill="none"/>
+            <ellipse ng-show="attempts > 5" stroke="#000000" ry="38" rx="37.33334" id="svg_7" cy="170.75" cx="313.16667" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="6" fill="none"/>
+            <line ng-show="attempts > 3" stroke="#000000" id="svg_9" y2="297" x2="257.66667" y1="235" x1="312.83334" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="10" fill="none"/>
+            <line ng-show="attempts > 2" stroke="#000000" id="svg_10" y2="230.91666" x2="312.91666" y1="301.5" x1="371.33335" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="10" fill="none"/>
+            <line ng-show="attempts > 1" stroke="#000000" id="svg_11" y2="370.41666" x2="289.41666" y1="317.25" x1="312.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="10" fill="none"/>
+            <line ng-show="attempts > 0" id="svg_12" y2="373" x2="337" y1="317" x1="314.33333" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="10" stroke="#000000" fill="none"/>
+            <path fill="#ff0000" stroke-width="10" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" id="svg_14" d="m312,65.33334c0,3.59254 0,4.22092 0,5.05108c0,0.81682 0,1.70571 0,2.3814c0,0.67567 0,1.57658 0,2.25224c0,0.67567 0,1.57659 0,2.25227c0,0.67567 0,1.57656 0,2.25732c0,0.46886 0,1.21717 0,2.0462c0,0.91724 0,1.56438 0,2.22957c0,1.01182 0,1.68262 0,2.3399c0,0.63476 0,1.52496 0,2.32903c0,0.50977 0,1.28005 0,2.11038c0,0.9054 0,1.52402 0,2.13364c0,0.85869 0,1.63065 0,2.3418c0,0.90617 0,1.59367 0,2.3217c0,0.799 0,1.68415 0,2.30051c0,0.61637 0,1.5015 0,2.29542c0,0.69259 0,1.45836 0,2.20911c0,0.75076 0,1.49249 0,2.08031c0,1.00845 0,1.63442 0,2.42419c0,0.78828 0,1.46397 0,2.25227c0,0.78829 0,1.46397 0,2.32434c0,0.68169 0,1.44894 0,2.10361c0,0.88889 0,1.66969 0,2.35229c0,0.76485 0,1.44052 0,2.3009c0,0.68169 0,1.44896 0,2.10358c0,0.88909 0,1.54207 0,2.32885c0,0.78679 0,1.5946 0,2.25227c0,0.81232 0,1.5931 0,2.25225l0,0.81232l0,0.78079" stroke="#ff0000"/>
+            <path ng-show="attempts > 5" stroke="#ff0000" id="svg_8" d="m301,215.25c11,19.72235 26,0.51901 26,0.51901c0,0 -26,-0.51901 -26,-0.51901z" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="10" fill="none"/>
+            <ellipse ng-show="attempts > 5" ry="5" rx="1" id="svg_16" cy="169" cx="324" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="6" stroke="#000000" fill="none"/>
+            <ellipse ng-show="attempts > 5" id="svg_17" ry="5" rx="1" cy="167" cx="299" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="6" stroke="#000000" fill="none"/>
+            <text ng-show="attempts > 5" stroke="#000000" transform="rotate(-88.3634262084961 307.0135803222656,188.36241149902344) matrix(0.9239895343780516,0,0,1,74.1514757350087,4) " xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_18" y="192.3545" x="252.01595" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">)</text>
+        </g>
+    </svg>
+    <div class="secret-word">
+        <span ng-repeat="letter in secret.split('') track by $index">{{letter}}</span>
+    </div>
+    <div class="keyboard">
+        <app-key ng-repeat="letter in letters" ng-click="chooseLetter(letter)">{{letter}}</app-key>
+    </div>
+    <div class="end-game">
+        <h1 class="lose-message" ng-show="isLose()">You lose</h1>
+        <h1 class="win-message" ng-show="hasWon()">You win</h1>
+
+    </div>
+</div>

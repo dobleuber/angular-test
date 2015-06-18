@@ -5,9 +5,12 @@ describe('myApp.hangman module', function() {
 
     describe('hangman controller', function() {
         var ctrl, scope;
-        beforeEach(inject(function(_$controller_, _$rootScope_){
+        beforeEach(inject(function(_$controller_, _$rootScope_, $httpBackend, wordService){
             scope = _$rootScope_.$new();
-            ctrl = _$controller_('HangmanCtrl', { $scope: scope});
+            $httpBackend.when('GET', 'http://randomword.setgetgo.com/get.php')
+                .respond('angular');
+            ctrl = _$controller_('HangmanCtrl', { $scope: scope, wordService: wordService});
+            $httpBackend.flush();
         }));
 
         it('Should be defined', function () {

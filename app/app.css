@@ -28,3 +28,28 @@
   content: "";
   padding: 0;
 }
+
+.hangman svg {
+    float: left;
+}
+
+.hangman .secret-word{
+    font-size: 5em;
+    color:transparent;
+}
+
+.hangman .secret-word span {
+    background-color: buttonface;
+    border: 1px solid black;
+    margin: 2px;
+    border-radius: 0.1em;
+}
+
+.hangman .secret-word .correct{
+    color: black;
+    background-color: green;
+}
+
+.keyboard {
+    margin-top: 3em;
+}
